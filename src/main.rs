@@ -1,15 +1,16 @@
-use std::io;
 
 fn main() {
-    println!("Guess the number!");
+    let mut height = 190;
+    height = height - 20;
+    let result = if height > 180 {
+        "Tall"
+    } else if height > 170 {
+        "Average"
+    } else {
+        "Short"
+    };
+    println!("Result: {}", result);
 
-    println!("Please input your guess.");
-
-    let mut guess = String::new();
-
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read line");
-
-    println!("You guessed: {guess}");
+    let health = if height > 180 {"good"} else {"unknown"};
+    println!("Health: {}", health);
 }
